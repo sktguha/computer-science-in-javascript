@@ -1,3 +1,3 @@
-This a fork from nicolas c zakas repository. I am adding a few more now. New ones are
-- trie
-- finding sub matrix with biggest sum from matrix of integers(from cracking the coding interview)
+This a fork from nicolas c zakas repository. I am adding a few more now. All are written in pure javascript. To execute just copy the code and paste it in the browser console. new ones are
+- data-structures/trie
+- algorithms/finding sub matrix with biggest sum from matrix of integers(from cracking the coding interview)
