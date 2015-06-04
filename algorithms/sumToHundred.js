@@ -1,5 +1,5 @@
 //algorithm to find out which possible combinations of 9 digits and symbols + , - or nothing sum to hundred.
-//i.e 12-3-4+5-6+7+89 = 100
+//ex -  12-3-4+5-6+7+89 = 100
 //to run open new tab, open console (ctrl+shift+j) and paste the code
 var mp = ['','+','-'];
 for(var i = 0;i< Math.pow(3,8);i++){
