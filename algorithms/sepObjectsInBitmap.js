@@ -60,8 +60,4 @@ function neighbour(i,j){
  }
  ad = ad.filter(function(e){ return arr[e[0]] && arr[e[0]][e[1]]===0;});
   return ad;
-  return {
-    'list' : ad,
-    'edge' : edge  
-  }
 }
