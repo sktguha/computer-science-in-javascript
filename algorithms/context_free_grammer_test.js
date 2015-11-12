@@ -1,8 +1,11 @@
 //a simple program for parsing and creating a new sentence out of a given cfg
 var store = {
-"nounphrase" : "<noun> | <adj> <adj> <noun> | super <nounphrase>",
-"noun" : "apple | pear | mailman",
-"adj" : "smelly | chartreuse | enormous"
+"full" : "<adj> <hero> <verb> <vadj> <villain> | hulk smash little <villain> | <hero> is <adj> | <villain> is <vadj> ",
+"hero" : "batman | superman | spiderman | ironman | thor", 
+"villain" : "doom | darkseid | joker | loki | thanos",
+"verb" : "hits | kicks | punches | hits",
+"adj" : "quick | nimble | strong | smart",
+"vadj" : "stupid | cunning | evil | mad"
 };
 function parse(str, store){
   str = str.trim();
@@ -22,4 +25,4 @@ function parse(str, store){
   });
  return res.trim();
 }
-parse(store.nounphrase, store);
+parse(store.full, store);
