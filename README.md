@@ -6,7 +6,7 @@ given a boolean matrix, write a code to find if an island of 0's is completely s
 - algorithms.prefixParsing to parse prefix polish notation
 - algorithms/sepObjectsInBitmap.js algorithm to find seperate objects in bitmap( object refers to a continious neighbourhood of zeros)
 - algorithms/sumToHundred.js algorithm to find out which possible combinations of 9 digits and symbols + , - or nothing sum to hundred. ex - 12-3-4+5-6+7+89 = 100
-- algorithms/context_free_grammer_test.js . It is an example of cfg parser which can generate sentences from given set of rules passed
+- algorithms/context_free_grammer.js . It is an example of cfg parser which can generate sentences from given set of rules passed
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sktguha/computer-science-in-javascript/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
