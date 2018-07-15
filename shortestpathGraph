@@ -1,0 +1,55 @@
+function findDistanceBwVertexes(src , destination){
+
+    var alreadyEncounteredHash = {};
+
+    var adjacencyMatrix = {
+        'Min'     : ['William', 'Jayden', 'Omar'],
+        'William' : ['Min', 'Noam'],
+        'Jayden'  : ['Min', 'Amelia', 'Ren', 'Noam'],
+        'Ren'     : ['Jayden', 'Omar'],
+        'Amelia'  : ['Jayden', 'Adam', 'Miguel'],
+        'Adam'    : ['Amelia', 'Miguel', 'Sofia', 'Lucas'],
+        'Miguel'  : ['Amelia', 'Adam', 'Liam', 'Nathan'],
+        'Noam'    : ['Nathan', 'Jayden', 'William'],
+        'Omar'    : ['Ren', 'Min', 'Scott']
+    };
+
+    function findDistance(src, dest){
+        var neighbours = getAllNeighbours(src);
+        var distance;
+        var path = src + " : ";
+        alreadyEncounteredHash[src] = true;
+        if(neighbours.length < 1) {
+            distance = Number.POSITIVE_INFINITY;
+        } else if(neighbours.indexOf(dest) !==-1){
+            distance = 1;
+            path = path + dest;
+        } else {
+            var resultArray = neighbours.map(function(nb){
+                return findDistance(nb, dest);
+            });
+            var minVal = resultArray.reduce(function(minimumResult, res){
+                if(res.dist < minimumResult.dist){
+                    return res;
+                }
+                return minimumResult;
+            });
+            distance = 1 + minVal.dist;
+            path = path + minVal.path;
+        }
+        return {
+            dist : distance,
+            path : path
+        }
+    }
+
+
+    function getAllNeighbours(src){
+        return !adjacencyMatrix[src] ? [] : adjacencyMatrix[src].filter(function(neighbour){
+                return !alreadyEncounteredHash[neighbour];
+            });
+    }
+    return findDistance(src, destination);
+}
+
+findDistanceBwVertexes("Min", "amelia");
